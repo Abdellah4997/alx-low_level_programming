@@ -1,6 +1,2 @@
 #!/bin/bash
-c_file=$CFILE
-output_file="${c_file%.c}.s"
-gcc -S $c_file -o $output_file
-
-echo "Assembly code generated successfully! Saved as $output_file"
+gcc -c $CFILE
