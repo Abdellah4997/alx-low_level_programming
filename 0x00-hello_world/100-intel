@@ -1,0 +1,14 @@
+#include <stdio.h>
+/**
+ * main - Check if C file is provided
+ *Return: 
+ */
+int main(void)
+{
+	if [ -z "$CFILE" ]; then
+    		echo "Please provide the C file name in the CFILE variable."
+ 	        exit 1
+        fi
+
+	gcc -S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
+}
